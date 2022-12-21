@@ -146,7 +146,7 @@ int create_video_decoder(int codec_id, int hwAccel, void **handle)
 	{
 		context->av_codec_context->codec_id = static_cast<AVCodecID>(codec_id);
 		context->av_codec_context->opaque = context;
-		//context->av_codec_context->get_format = get_format;				
+		context->av_codec_context->get_format = get_format;				
 
 		av_opt_set_int(context->av_codec_context, "refcounted_frames", 1, 0);
 	}
